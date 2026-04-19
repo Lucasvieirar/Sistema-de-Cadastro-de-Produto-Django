@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 def product_view(request):
-    return HttpResponse('Hello World')
+    return render(request=request, template_name='products.html',)
