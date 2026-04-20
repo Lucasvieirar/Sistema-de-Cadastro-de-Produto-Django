@@ -1,11 +1,35 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Produtos Sistema de cadastro</title>
-    </head>
-    <body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<header>
+    Lista de Produtos
+</header>
+
+<div class="container">
+    <div class="grid">
         {% for product in products %}
-            {{ product.title }} - R$ {{product.price}} <br>
+            <div class="card">
+                <div class="product-title">{{ product.title }}</div>
+                <div class="price">R$ {{ product.price }}</div>
+            </div>
+        {% empty %}
+            <div class="empty">
+                Nenhum produto cadastrado.
+            </div>
         {% endfor %}
-    </body>
+    </div>
+</div>
+
+</body>
 </html>
